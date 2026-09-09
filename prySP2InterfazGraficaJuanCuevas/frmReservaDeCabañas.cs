@@ -63,6 +63,27 @@ namespace prySP2InterfazGraficaJuanCuevas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            int varDias = int.Parse(cmbDías.Text);
+
+            switch (varDias)
+            {
+                case 1:
+                    lblResultado.Text = "descuento 1%";
+                    break;
+                case < 5:
+                    lblResultado.Text = "descuento 5%";
+                    break;
+                case < 7:
+                    lblResultado.Text = "descuento 7%";
+                    break;
+                case >= 7:
+                    lblResultado.Text = "descuento 10%";
+                    break;
+                default:
+                    lblResultado.Text = "sin descuento";
+                    break;
+            }
+
             string varAdicionales = "";
 
             if (chkCocina.Checked == true) ;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReservaDeCabañas));
             gbxTipoDeCabaña = new GroupBox();
             cmbDías = new ComboBox();
             cmbPersonas2 = new ComboBox();
@@ -93,7 +94,7 @@
             // lblDías
             // 
             lblDías.AutoSize = true;
-            lblDías.Location = new Point(385, 49);
+            lblDías.Location = new Point(385, 44);
             lblDías.Name = "lblDías";
             lblDías.Size = new Size(29, 15);
             lblDías.TabIndex = 2;
@@ -111,7 +112,7 @@
             // lblPersonas
             // 
             lblPersonas.AutoSize = true;
-            lblPersonas.Location = new Point(189, 49);
+            lblPersonas.Location = new Point(189, 44);
             lblPersonas.Name = "lblPersonas";
             lblPersonas.Size = new Size(54, 15);
             lblPersonas.TabIndex = 1;
@@ -190,7 +191,7 @@
             cmbTarjetas2.Items.AddRange(new object[] { "Visa ", "Mastercard" });
             cmbTarjetas2.Location = new Point(179, 64);
             cmbTarjetas2.Name = "cmbTarjetas2";
-            cmbTarjetas2.Size = new Size(172, 23);
+            cmbTarjetas2.Size = new Size(76, 23);
             cmbTarjetas2.TabIndex = 5;
             cmbTarjetas2.SelectedIndexChanged += cmbTarjetas2_SelectedIndexChanged_1;
             // 
@@ -286,11 +287,12 @@
             // lblResultado
             // 
             lblResultado.AutoSize = true;
-            lblResultado.Location = new Point(28, 535);
+            lblResultado.BackColor = Color.DarkKhaki;
+            lblResultado.Location = new Point(40, 524);
             lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(38, 15);
+            lblResultado.Size = new Size(22, 15);
             lblResultado.TabIndex = 5;
-            lblResultado.Text = "label1";
+            lblResultado.Text = "---";
             // 
             // FrmReservaDeCabañas
             // 
@@ -303,6 +305,7 @@
             Controls.Add(gbxFormasDePago);
             Controls.Add(gbxAdicionales);
             Controls.Add(gbxTipoDeCabaña);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmReservaDeCabañas";
             Text = "Reservas De Cabañas";
             gbxTipoDeCabaña.ResumeLayout(false);
@@ -331,16 +334,16 @@
         private CheckBox chkCocina;
         private RadioButton rdEfectivo;
         private RadioButton rdTarjeta;
-        private ComboBox cmbPersonas2;
-        private ComboBox cmbDías;
         private Label lblTelefonos;
         private Label lblNombre;
-        private ComboBox cmbTipo2;
         private ComboBox cmbTarjetas2;
         private Label lblTarjetas;
         private TextBox txtTelefonos2;
         private TextBox txtNombres2;
         private Button btnAceptar;
         private Label lblResultado;
+        private ComboBox cmbDías;
+        private ComboBox cmbPersonas2;
+        private ComboBox cmbTipo2;
     }
 }
