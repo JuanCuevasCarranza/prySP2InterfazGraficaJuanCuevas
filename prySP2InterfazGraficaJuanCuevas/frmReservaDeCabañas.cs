@@ -63,7 +63,7 @@ namespace prySP2InterfazGraficaJuanCuevas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int varDias = int.Parse(cmbDías.Text);
+            int varDias = int.Parse(txtDías.Text);
 
             switch (varDias)
             {
@@ -86,7 +86,7 @@ namespace prySP2InterfazGraficaJuanCuevas
 
             string varAdicionales = "";
 
-            if (chkCocina.Checked == true) ;
+            if (chkCocina.Checked == true) 
             {
                 varAdicionales += "Cocina ";
             }
@@ -125,6 +125,11 @@ namespace prySP2InterfazGraficaJuanCuevas
         }
 
         private void cmbTarjetas2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

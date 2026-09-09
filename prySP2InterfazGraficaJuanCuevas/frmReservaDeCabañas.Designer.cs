@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReservaDeCabañas));
             gbxTipoDeCabaña = new GroupBox();
-            cmbDías = new ComboBox();
-            cmbPersonas2 = new ComboBox();
             lblDías = new Label();
-            cmbTipo2 = new ComboBox();
             lblPersonas = new Label();
             lblTipo = new Label();
             gbxAdicionales = new GroupBox();
@@ -52,6 +49,9 @@
             lblNombre = new Label();
             btnAceptar = new Button();
             lblResultado = new Label();
+            txtPersonas = new TextBox();
+            txtDías = new TextBox();
+            txtTipo = new TextBox();
             gbxTipoDeCabaña.SuspendLayout();
             gbxAdicionales.SuspendLayout();
             gbxFormasDePago.SuspendLayout();
@@ -60,10 +60,10 @@
             // 
             // gbxTipoDeCabaña
             // 
-            gbxTipoDeCabaña.Controls.Add(cmbDías);
-            gbxTipoDeCabaña.Controls.Add(cmbPersonas2);
+            gbxTipoDeCabaña.Controls.Add(txtTipo);
+            gbxTipoDeCabaña.Controls.Add(txtDías);
+            gbxTipoDeCabaña.Controls.Add(txtPersonas);
             gbxTipoDeCabaña.Controls.Add(lblDías);
-            gbxTipoDeCabaña.Controls.Add(cmbTipo2);
             gbxTipoDeCabaña.Controls.Add(lblPersonas);
             gbxTipoDeCabaña.Controls.Add(lblTipo);
             gbxTipoDeCabaña.Location = new Point(28, 17);
@@ -74,40 +74,15 @@
             gbxTipoDeCabaña.Text = "Tipo de cabaña";
             gbxTipoDeCabaña.Enter += gbxTipoDeCabaña_Enter;
             // 
-            // cmbDías
-            // 
-            cmbDías.FormattingEnabled = true;
-            cmbDías.Location = new Point(420, 41);
-            cmbDías.Name = "cmbDías";
-            cmbDías.Size = new Size(121, 23);
-            cmbDías.TabIndex = 4;
-            cmbDías.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            // 
-            // cmbPersonas2
-            // 
-            cmbPersonas2.FormattingEnabled = true;
-            cmbPersonas2.Location = new Point(249, 41);
-            cmbPersonas2.Name = "cmbPersonas2";
-            cmbPersonas2.Size = new Size(121, 23);
-            cmbPersonas2.TabIndex = 3;
-            // 
             // lblDías
             // 
             lblDías.AutoSize = true;
-            lblDías.Location = new Point(385, 44);
+            lblDías.Location = new Point(375, 44);
             lblDías.Name = "lblDías";
             lblDías.Size = new Size(29, 15);
             lblDías.TabIndex = 2;
             lblDías.Text = "Días";
             lblDías.Click += label3_Click;
-            // 
-            // cmbTipo2
-            // 
-            cmbTipo2.FormattingEnabled = true;
-            cmbTipo2.Location = new Point(62, 41);
-            cmbTipo2.Name = "cmbTipo2";
-            cmbTipo2.Size = new Size(121, 23);
-            cmbTipo2.TabIndex = 0;
             // 
             // lblPersonas
             // 
@@ -294,6 +269,28 @@
             lblResultado.TabIndex = 5;
             lblResultado.Text = "---";
             // 
+            // txtPersonas
+            // 
+            txtPersonas.Location = new Point(260, 41);
+            txtPersonas.Name = "txtPersonas";
+            txtPersonas.Size = new Size(100, 23);
+            txtPersonas.TabIndex = 3;
+            txtPersonas.TextChanged += textBox1_TextChanged;
+            // 
+            // txtDías
+            // 
+            txtDías.Location = new Point(420, 41);
+            txtDías.Name = "txtDías";
+            txtDías.Size = new Size(100, 23);
+            txtDías.TabIndex = 4;
+            // 
+            // txtTipo
+            // 
+            txtTipo.Location = new Point(70, 41);
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new Size(100, 23);
+            txtTipo.TabIndex = 5;
+            // 
             // FrmReservaDeCabañas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -342,8 +339,8 @@
         private TextBox txtNombres2;
         private Button btnAceptar;
         private Label lblResultado;
-        private ComboBox cmbDías;
-        private ComboBox cmbPersonas2;
-        private ComboBox cmbTipo2;
+        private TextBox txtTipo;
+        private TextBox txtDías;
+        private TextBox txtPersonas;
     }
 }
