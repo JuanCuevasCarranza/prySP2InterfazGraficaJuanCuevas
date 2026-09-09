@@ -30,13 +30,13 @@
         {
             gbxTipoDeCabaña = new GroupBox();
             cmbDías = new ComboBox();
-            cmbTipo2 = new ComboBox();
-            lblDías = new Label();
             cmbPersonas2 = new ComboBox();
+            lblDías = new Label();
+            cmbTipo2 = new ComboBox();
             lblPersonas = new Label();
             lblTipo = new Label();
             gbxAdicionales = new GroupBox();
-            chkTELEVISOR = new CheckBox();
+            chkTelevisor = new CheckBox();
             chkHeladera = new CheckBox();
             chkCocina = new CheckBox();
             gbxFormasDePago = new GroupBox();
@@ -50,6 +50,7 @@
             lblTelefonos = new Label();
             lblNombre = new Label();
             btnAceptar = new Button();
+            lblResultado = new Label();
             gbxTipoDeCabaña.SuspendLayout();
             gbxAdicionales.SuspendLayout();
             gbxFormasDePago.SuspendLayout();
@@ -59,9 +60,9 @@
             // gbxTipoDeCabaña
             // 
             gbxTipoDeCabaña.Controls.Add(cmbDías);
-            gbxTipoDeCabaña.Controls.Add(cmbTipo2);
-            gbxTipoDeCabaña.Controls.Add(lblDías);
             gbxTipoDeCabaña.Controls.Add(cmbPersonas2);
+            gbxTipoDeCabaña.Controls.Add(lblDías);
+            gbxTipoDeCabaña.Controls.Add(cmbTipo2);
             gbxTipoDeCabaña.Controls.Add(lblPersonas);
             gbxTipoDeCabaña.Controls.Add(lblTipo);
             gbxTipoDeCabaña.Location = new Point(28, 17);
@@ -70,6 +71,7 @@
             gbxTipoDeCabaña.TabIndex = 0;
             gbxTipoDeCabaña.TabStop = false;
             gbxTipoDeCabaña.Text = "Tipo de cabaña";
+            gbxTipoDeCabaña.Enter += gbxTipoDeCabaña_Enter;
             // 
             // cmbDías
             // 
@@ -80,13 +82,13 @@
             cmbDías.TabIndex = 4;
             cmbDías.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // cmbTipo2
+            // cmbPersonas2
             // 
-            cmbTipo2.FormattingEnabled = true;
-            cmbTipo2.Location = new Point(56, 44);
-            cmbTipo2.Name = "cmbTipo2";
-            cmbTipo2.Size = new Size(121, 23);
-            cmbTipo2.TabIndex = 3;
+            cmbPersonas2.FormattingEnabled = true;
+            cmbPersonas2.Location = new Point(249, 41);
+            cmbPersonas2.Name = "cmbPersonas2";
+            cmbPersonas2.Size = new Size(121, 23);
+            cmbPersonas2.TabIndex = 3;
             // 
             // lblDías
             // 
@@ -98,13 +100,13 @@
             lblDías.Text = "Días";
             lblDías.Click += label3_Click;
             // 
-            // cmbPersonas2
+            // cmbTipo2
             // 
-            cmbPersonas2.FormattingEnabled = true;
-            cmbPersonas2.Location = new Point(249, 41);
-            cmbPersonas2.Name = "cmbPersonas2";
-            cmbPersonas2.Size = new Size(121, 23);
-            cmbPersonas2.TabIndex = 0;
+            cmbTipo2.FormattingEnabled = true;
+            cmbTipo2.Location = new Point(62, 41);
+            cmbTipo2.Name = "cmbTipo2";
+            cmbTipo2.Size = new Size(121, 23);
+            cmbTipo2.TabIndex = 0;
             // 
             // lblPersonas
             // 
@@ -127,7 +129,7 @@
             // 
             // gbxAdicionales
             // 
-            gbxAdicionales.Controls.Add(chkTELEVISOR);
+            gbxAdicionales.Controls.Add(chkTelevisor);
             gbxAdicionales.Controls.Add(chkHeladera);
             gbxAdicionales.Controls.Add(chkCocina);
             gbxAdicionales.Location = new Point(28, 143);
@@ -138,15 +140,15 @@
             gbxAdicionales.Text = "Adicionales";
             gbxAdicionales.Enter += groupBox1_Enter;
             // 
-            // chkTELEVISOR
+            // chkTelevisor
             // 
-            chkTELEVISOR.AutoSize = true;
-            chkTELEVISOR.Location = new Point(19, 105);
-            chkTELEVISOR.Name = "chkTELEVISOR";
-            chkTELEVISOR.Size = new Size(72, 19);
-            chkTELEVISOR.TabIndex = 2;
-            chkTELEVISOR.Text = "Televisor";
-            chkTELEVISOR.UseVisualStyleBackColor = true;
+            chkTelevisor.AutoSize = true;
+            chkTelevisor.Location = new Point(19, 105);
+            chkTelevisor.Name = "chkTelevisor";
+            chkTelevisor.Size = new Size(72, 19);
+            chkTelevisor.TabIndex = 2;
+            chkTelevisor.Text = "Televisor";
+            chkTelevisor.UseVisualStyleBackColor = true;
             // 
             // chkHeladera
             // 
@@ -180,14 +182,17 @@
             gbxFormasDePago.TabIndex = 2;
             gbxFormasDePago.TabStop = false;
             gbxFormasDePago.Text = "Formas de pago";
+            gbxFormasDePago.Enter += gbxFormasDePago_Enter;
             // 
             // cmbTarjetas2
             // 
             cmbTarjetas2.FormattingEnabled = true;
-            cmbTarjetas2.Location = new Point(169, 68);
+            cmbTarjetas2.Items.AddRange(new object[] { "Visa ", "Mastercard" });
+            cmbTarjetas2.Location = new Point(179, 64);
             cmbTarjetas2.Name = "cmbTarjetas2";
             cmbTarjetas2.Size = new Size(172, 23);
             cmbTarjetas2.TabIndex = 5;
+            cmbTarjetas2.SelectedIndexChanged += cmbTarjetas2_SelectedIndexChanged_1;
             // 
             // lblTarjetas
             // 
@@ -206,9 +211,9 @@
             rdEfectivo.Name = "rdEfectivo";
             rdEfectivo.Size = new Size(67, 19);
             rdEfectivo.TabIndex = 3;
-            rdEfectivo.TabStop = true;
             rdEfectivo.Text = "Efectivo";
             rdEfectivo.UseVisualStyleBackColor = true;
+            rdEfectivo.CheckedChanged += rdEfectivo_CheckedChanged;
             // 
             // rdTarjeta
             // 
@@ -217,9 +222,9 @@
             rdTarjeta.Name = "rdTarjeta";
             rdTarjeta.Size = new Size(60, 19);
             rdTarjeta.TabIndex = 0;
-            rdTarjeta.TabStop = true;
             rdTarjeta.Text = "Tarjeta";
             rdTarjeta.UseVisualStyleBackColor = true;
+            rdTarjeta.CheckedChanged += rdTarjeta_CheckedChanged;
             // 
             // gbxTitularDeReserva
             // 
@@ -276,12 +281,23 @@
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // lblResultado
+            // 
+            lblResultado.AutoSize = true;
+            lblResultado.Location = new Point(28, 535);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(38, 15);
+            lblResultado.TabIndex = 5;
+            lblResultado.Text = "label1";
             // 
             // FrmReservaDeCabañas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(580, 503);
+            ClientSize = new Size(580, 579);
+            Controls.Add(lblResultado);
             Controls.Add(btnAceptar);
             Controls.Add(gbxTitularDeReserva);
             Controls.Add(gbxFormasDePago);
@@ -298,6 +314,7 @@
             gbxTitularDeReserva.ResumeLayout(false);
             gbxTitularDeReserva.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -309,20 +326,21 @@
         private GroupBox gbxAdicionales;
         private GroupBox gbxFormasDePago;
         private GroupBox gbxTitularDeReserva;
-        private CheckBox chkTELEVISOR;
+        private CheckBox chkTelevisor;
         private CheckBox chkHeladera;
         private CheckBox chkCocina;
         private RadioButton rdEfectivo;
         private RadioButton rdTarjeta;
-        private ComboBox cmbTipo2;
+        private ComboBox cmbPersonas2;
         private ComboBox cmbDías;
         private Label lblTelefonos;
         private Label lblNombre;
-        private ComboBox cmbPersonas2;
+        private ComboBox cmbTipo2;
         private ComboBox cmbTarjetas2;
         private Label lblTarjetas;
         private TextBox txtTelefonos2;
         private TextBox txtNombres2;
         private Button btnAceptar;
+        private Label lblResultado;
     }
 }
