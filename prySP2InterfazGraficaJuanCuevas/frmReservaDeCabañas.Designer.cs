@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReservaDeCabañas));
             gbxTipoDeCabaña = new GroupBox();
+            ltsBoxTipo = new ListBox();
+            txtDías = new TextBox();
             lblDías = new Label();
             lblPersonas = new Label();
             lblTipo = new Label();
@@ -49,9 +51,7 @@
             lblNombre = new Label();
             btnAceptar = new Button();
             lblResultado = new Label();
-            txtPersonas = new TextBox();
-            txtDías = new TextBox();
-            txtTipo = new TextBox();
+            ltsBoxPersonas = new ListBox();
             gbxTipoDeCabaña.SuspendLayout();
             gbxAdicionales.SuspendLayout();
             gbxFormasDePago.SuspendLayout();
@@ -60,9 +60,9 @@
             // 
             // gbxTipoDeCabaña
             // 
-            gbxTipoDeCabaña.Controls.Add(txtTipo);
+            gbxTipoDeCabaña.Controls.Add(ltsBoxPersonas);
+            gbxTipoDeCabaña.Controls.Add(ltsBoxTipo);
             gbxTipoDeCabaña.Controls.Add(txtDías);
-            gbxTipoDeCabaña.Controls.Add(txtPersonas);
             gbxTipoDeCabaña.Controls.Add(lblDías);
             gbxTipoDeCabaña.Controls.Add(lblPersonas);
             gbxTipoDeCabaña.Controls.Add(lblTipo);
@@ -74,10 +74,26 @@
             gbxTipoDeCabaña.Text = "Tipo de cabaña";
             gbxTipoDeCabaña.Enter += gbxTipoDeCabaña_Enter;
             // 
+            // ltsBoxTipo
+            // 
+            ltsBoxTipo.FormattingEnabled = true;
+            ltsBoxTipo.Items.AddRange(new object[] { "Tipo A", "Tipo B" });
+            ltsBoxTipo.Location = new Point(59, 44);
+            ltsBoxTipo.Name = "ltsBoxTipo";
+            ltsBoxTipo.Size = new Size(65, 19);
+            ltsBoxTipo.TabIndex = 5;
+            // 
+            // txtDías
+            // 
+            txtDías.Location = new Point(373, 44);
+            txtDías.Name = "txtDías";
+            txtDías.Size = new Size(100, 23);
+            txtDías.TabIndex = 4;
+            // 
             // lblDías
             // 
             lblDías.AutoSize = true;
-            lblDías.Location = new Point(375, 44);
+            lblDías.Location = new Point(338, 48);
             lblDías.Name = "lblDías";
             lblDías.Size = new Size(29, 15);
             lblDías.TabIndex = 2;
@@ -87,7 +103,7 @@
             // lblPersonas
             // 
             lblPersonas.AutoSize = true;
-            lblPersonas.Location = new Point(189, 44);
+            lblPersonas.Location = new Point(148, 44);
             lblPersonas.Name = "lblPersonas";
             lblPersonas.Size = new Size(54, 15);
             lblPersonas.TabIndex = 1;
@@ -99,9 +115,9 @@
             lblTipo.AutoSize = true;
             lblTipo.Location = new Point(19, 44);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(31, 15);
+            lblTipo.Size = new Size(34, 15);
             lblTipo.TabIndex = 0;
-            lblTipo.Text = "Tipo";
+            lblTipo.Text = "Tipo:";
             // 
             // gbxAdicionales
             // 
@@ -269,27 +285,13 @@
             lblResultado.TabIndex = 5;
             lblResultado.Text = "---";
             // 
-            // txtPersonas
+            // ltsBoxPersonas
             // 
-            txtPersonas.Location = new Point(260, 41);
-            txtPersonas.Name = "txtPersonas";
-            txtPersonas.Size = new Size(100, 23);
-            txtPersonas.TabIndex = 3;
-            txtPersonas.TextChanged += textBox1_TextChanged;
-            // 
-            // txtDías
-            // 
-            txtDías.Location = new Point(420, 41);
-            txtDías.Name = "txtDías";
-            txtDías.Size = new Size(100, 23);
-            txtDías.TabIndex = 4;
-            // 
-            // txtTipo
-            // 
-            txtTipo.Location = new Point(70, 41);
-            txtTipo.Name = "txtTipo";
-            txtTipo.Size = new Size(100, 23);
-            txtTipo.TabIndex = 5;
+            ltsBoxPersonas.FormattingEnabled = true;
+            ltsBoxPersonas.Location = new Point(217, 44);
+            ltsBoxPersonas.Name = "ltsBoxPersonas";
+            ltsBoxPersonas.Size = new Size(94, 19);
+            ltsBoxPersonas.TabIndex = 6;
             // 
             // FrmReservaDeCabañas
             // 
@@ -339,8 +341,8 @@
         private TextBox txtNombres2;
         private Button btnAceptar;
         private Label lblResultado;
-        private TextBox txtTipo;
         private TextBox txtDías;
-        private TextBox txtPersonas;
+        private ListBox ltsBoxTipo;
+        private ListBox ltsBoxPersonas;
     }
 }
